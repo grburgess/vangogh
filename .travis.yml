@@ -6,11 +6,12 @@ install:
 - python setup.py install
 script:
 - python -m pytest -vv --cov=vangogh/
-# deploy:
-#   provider: pypi
-#   user: "__token__"
-
-#   on:
-#     tags: true
-#   distributions: "sdist bdist_wheel" # Your distributions here
-#   skip_existing: true
+deploy:
+  provider: pypi
+  user: "__token__"
+  password:
+    secure: f1vOK9Sn+rQMkLcV+AN9lKFbPXjj0BRoD0AFy3t6PALRRpJmmZYd8etKiwqQQ/dJA8sv6h9Hco9nf35QjzwlFW3jlrT3bEfwON4w4hXrTiO0FCAYuq3PxEKfESRA+DybsbMJ8DcYun4lZTNc2jte3RNDDeWz/eY2gi1+79KUQ6o6au2QCkwvNYAyU6rgWtS48MjYMz42eul1yXKS+POsGBP4HeC6qURxegE9BCO1coveDJdrRChz4a5RXWQjfNUsXBAjxAHnpw47wB1OWtsmlX0zooY3y4fsgrGwd0wTsZOaSI2inWsaNCDw9eDmaI8OtTMfyRTJMGHqYd77wX3e143BfIHWYiQ8/+XSy1rFTbdUixCyOOoOmgxckROZDI4nkJ92pZgnabNapBhUfP0VlmAEuFU3fdspDj5yiNsIkUaLWE/eCrwS0jdNF7iVl1kuXF3o7vdKEn/7e94vUnhzTNOQ410TGC412w+yZ/U97ncfnXo2Ik++4rDGonKHLeOKx5GEpf8xGF0so9VPRc7RMuK1yhXTPbL7kn7+1eo1mth/MtmPw8prER/kPnIlwLTr0O5aOls9XcfvwZZXzA3wFYJ2h0+UMZ45YrdFcHYHmt8T2ZkjwTpCt3RVP3eIN5y7F5RlVikgbT1DThiooETws9+9Q+pu3Ag97QDnIgf/KyM=
+  on:
+    tags: true
+  distributions: "sdist bdist_wheel" # Your distributions here
+  skip_existing: true
