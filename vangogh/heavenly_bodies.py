@@ -2,9 +2,9 @@ import ipyvolume as ipv
 import numpy as np
 import h5py
 import PIL.Image as pil_image
-from gbmgeometry.utils.package_utils import get_path_of_data_file
-from gbmgeometry.geometry import Sphere
-from gbmgeometry.geometry.cirs_to_gcrs import cirs_to_gcrs
+from vangogh.utils.package_utils import get_path_of_data_file
+from vangogh.sphere import Sphere
+from vangogh.cirs_to_gcrs import cirs_to_gcrs
 
 _earth_img = dict(
     day=get_path_of_data_file("earth_day.jpg"),

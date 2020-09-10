@@ -1,11 +1,6 @@
 import ipyvolume as ipv
-import numpy as np
-import matplotlib.pyplot as plt
 import numba as nb
-import h5py
-
-from gbmgeometry.utils.package_utils import get_path_of_data_file
-
+import numpy as np
 
 # -*- coding: utf-8 -*-
 class Sphere(object):
@@ -47,9 +42,9 @@ class Sphere(object):
 
     def plot(self, **kwargs):
         """
-        
+
         plot the sphere
-        
+
 
         :returns: 
         :rtype: 
@@ -69,13 +64,10 @@ class Sphere(object):
         phi = u * 2 * np.pi
         theta = v * np.pi
 
-
         x_unit = np.cos(phi) * np.sin(theta)
         y_unit = np.sin(theta) * np.sin(phi)
         z_unit = np.cos(theta)
 
-        
-        
         if self._transform_matrix is not None:
 
             xyz = np.array([x_unit, y_unit, z_unit]).T
@@ -119,15 +111,18 @@ class Sphere(object):
             if self._time_dep_transform:
                 # if False:
                 X = np.array(
-                    [self._x + self._radius * x_unit for _ in range(self._n_steps)]
+                    [self._x + self._radius *
+                        x_unit for _ in range(self._n_steps)]
                 )
 
                 Y = np.array(
-                    [self._y + self._radius * y_unit for _ in range(self._n_steps)]
+                    [self._y + self._radius *
+                        y_unit for _ in range(self._n_steps)]
                 )
 
                 Z = np.array(
-                    [self._z + self._radius * z_unit for _ in range(self._n_steps)]
+                    [self._z + self._radius *
+                        z_unit for _ in range(self._n_steps)]
                 )
 
             else:
