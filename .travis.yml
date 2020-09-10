@@ -5,7 +5,7 @@ install:
 - pip install --upgrade numpy coverage pytest pytest-cov codecov
 - python setup.py install
 script:
-#- python -m pytest -vv --cov=vangogh/
+- python -m pytest -vv --cov=vangogh/
 deploy:
   provider: pypi
   user: "__token__"
